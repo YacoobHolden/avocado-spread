@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
-import Button from 'material-ui/Button';
 import styles from './styles.css';
+import { Button } from 'react-toolbox';
 
 @inject('store')
 @observer
@@ -14,9 +14,9 @@ class OmniBar extends Component {
             <i className="material-icons">sort</i>
           </div>
           <div className={styles.item}>
-            <button>
+            <Button>
               Clear All
-            </button>
+            </Button>
           </div>
         </div>
         <div className={styles.right}>
