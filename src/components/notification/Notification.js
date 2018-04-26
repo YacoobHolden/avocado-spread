@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import styles from './styles.css';
 
 class Notification extends Component {
 
@@ -7,7 +8,7 @@ class Notification extends Component {
       return null;
     }
     return (
-      <div>
+      <div className={styles.card}>
         I'm a Notification. {this.props.notification.title}
       </div>
     );
