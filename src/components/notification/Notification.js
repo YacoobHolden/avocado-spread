@@ -34,12 +34,12 @@ class Notification extends Component {
               <Time notification={notification}/>
             </div>
             <div className={styles.contentSection}>  
+            <div className={styles.textContent}>
                 {notification.subtitle && (
-                  <div className={styles.subtitle}>
+                  <span className={styles.subtitle}>
                     {notification.subtitle}
-                  </div>
+                  </span>
                 )}
-                <div className={styles.textContent}>
                   {notification.content}
                 </div>
             </div>
