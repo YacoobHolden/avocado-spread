@@ -24,17 +24,19 @@ class Notification extends Component {
     return (
       <div className={styles.card}>
         <div className={`${styles.severity} ${getClassForPriority(notification)}`}>
-        </div> 
-        <div>
-          <div className={styles.cardContent}>      
-            <div>
-              I'm a Notification. {notification.title}
-            </div>
-            <div>
-              yayyayayayya
-            </div>  
-          </div>
         </div>
+          <div className={styles.cardContent}>      
+            <div className={styles.contentSection}>
+              <div>
+                {notification.title}                
+              </div>
+            </div>
+            <div className={styles.contentSection}>
+              <div>
+                yayyayayayya
+              </div>  
+            </div>
+          </div>
         
       </div>
 
