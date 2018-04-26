@@ -8,21 +8,15 @@ class Store {
     this.rootStore = rootStore;
   }
 
-  @action
-  fetchNotifications() {
-    return getNotifications().then(data => {
-      this.notifications = data.notifications;
-    });
-  }
-
   openNotificationSocket() {
-    subscribeToNotifications((err, data) => this.appendNotification(data))
+    subscribeToNotifications(
+      e => this.appendNotifications(JSON.parse(e.data))
+    )
   }
 
   @action
-  appendNotification(notification) {
-    console.log(notification);
-    this.notifications.push(notification);
+  appendNotifications(notifications) {
+    this.notifications = this.notifications.concat(notifications);
   }
 
 }

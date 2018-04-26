@@ -7,7 +7,6 @@ import Store from './stores/store';
 class App extends Component {
   render() {
     const store = new Store();
-    store.fetchNotifications();
     store.openNotificationSocket();
     return (
       <Provider store={store}>

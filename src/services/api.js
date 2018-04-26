@@ -1,14 +1,22 @@
 import 'isomorphic-fetch';
-import openSocket from 'socket.io-client';
+import Sockette from 'sockette';
 import Constants from './constants';
-
-const socket = openSocket(Constants.WEB_SOCKET_URI);
 
 export function getNotifications() {
   return fetch(`${Constants.API_URI}${Constants.NOTIFICATION_ENDPOINT}`).then(resp => resp.json());
 }
 
-export function subscribeToNotifications(cb, interval = 1000) {
-  socket.on('notifications', data => cb(null, data));
-  socket.emit('subscribeToNotifications', interval);
+export function subscribeToNotifications(onMessageRecieved) {
+
+  const ws = new Sockette(Constants.WEB_SOCKET_URI, {
+    timeout: 5e3,
+    maxAttempts: 10,
+    onopen: e => console.log('Connected!', e),
+    onmessage: onMessageRecieved,
+    onreconnect: e => console.log('Reconnecting...', e),
+    onmaximum: e => console.log('Stop Attempting!', e),
+    onclose: e => console.log('Closed!', e),
+    onerror: e => console.log('Error:', e)
+  });
+
 }
