@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import styles from './common.css';
 import Panel from './panel/Panel';
 import MapPanel from './map/MapPanel';
 import Notification from './notification/Notification';
