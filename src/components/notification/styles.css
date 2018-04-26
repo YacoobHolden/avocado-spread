@@ -1,26 +1,75 @@
 .card {
-  height: 56px;	
+  min-height: 56px;	
   width:100%;	
   border-radius: 3px;	
   background-color: rgba(255,255,255,0.8);	
   box-shadow: 0 1px 1px 0 #CDCDCD;
   margin-top: 10px;
   display: flex;
+  justify-content: flex-start;
+  position: relative;
+  overflow: hidden;
+  flex-direction: row;
+}
+
+.notificationTitle {
+  font-size: 14px;
+  color: #2E2E2E;
+  font-family: roboto;
+  line-height: 16px;
+  margin-bottom: 5px;
+}
+
+.notificationTime {
+  font-size: 10px;
+  color: #9B9B9B;
+  text-align: right;
+  flex-grow: 2;
+}
+
+.subtitle {
+  color: #2E2E2E;	
+  font-family: Roboto;	
+  font-size: 12px;	
+  font-weight: 500;	
+  line-height: 16px;
+  margin-right:5px;
+  white-space: nowrap;
+}
+
+.textContent {
+  overflow: wrap;
+  color: #9B9B9B;	
+  font-family: Roboto;	
+  font-size: 12px;	
+  line-height: 16px;
+  width: 100%;
 }
 
 .cardContent {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  padding: 10px 10px 10px 10px;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
 
+.contentSection {
+  display: flex;
+  flex-grow: 1;
+  overflow: hidden;
+  width: 100%;
+  justify-content: space-between;
 }
 
 .severity {
-  height: 56px;	
+  height: inherit;	
   width: 32px;	
   opacity: 0.9;
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
-  left:0px;
+  flex-shrink: 0;
 }
 
 .lowSeverity {

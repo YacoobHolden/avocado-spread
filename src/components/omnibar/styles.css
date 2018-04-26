@@ -1,4 +1,7 @@
+@import '../common.css';
+
 .omnibar  {
+  margin-top: var(--top);  
   height: 40px;
   opacity: 0.9;
   border-radius: 3px;
@@ -21,4 +24,15 @@
 
 .item {
   padding: 0 4px;
+  transition: all 0.3s;
+  height: 100%;
+}
+
+.item span {
+
+  vertical-align: top !important;
+}
+
+.upsideDown {
+  transform: scaleY(-1);
 }

@@ -9,7 +9,7 @@ const mockNotifications = [
     "title": "Traffic Alert",
     "content": "CRASH occurred on SH1 (thanks, Gwyneth)",
     "type": "TRAFFIC",
-    "timestamp": "2018-04-26T03:59:21+00:00",
+    "timestamp": "2018-04-26T20:40:21+00:00",
     "severity": 3,
     "properties": {
       "lat": -36.8322175,
@@ -19,7 +19,8 @@ const mockNotifications = [
   {
     "id": 1,
     "title": "Geofence entry",
-    "content": "Jane is going through a geofence!",
+    "subtitle": "Jane Doe",
+    "content": "Jane is going through a geofence! yes jane woohoo lets go lots of text",
     "type": "GEOFENCE",
     "timestamp": "2018-04-26T03:43:21+00:00",
     "severity": 1,

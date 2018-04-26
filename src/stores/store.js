@@ -6,19 +6,34 @@ export const SORT_BY = {
   SEVERITY: 'severity',
   TIME: 'time',
 }
+
+const compareTime = (a, b) => {
+  return compareDesc(parse(a.timestamp), parse(b.timestamp));
+}
+
 class Store {
   @observable notifications = [];
   @observable displayNotifications = true;
   @observable sortBy = SORT_BY.TIME;
+  notificationSocket = null;
 
   constructor(rootStore) {
     this.rootStore = rootStore;
   }
 
   openNotificationSocket() {
-    subscribeToNotifications(
+    this.notificationSocket = subscribeToNotifications(
       e => this.appendNotifications(JSON.parse(e.data))
     )
+  }
+
+  @action
+  markAsRead(notification) {
+    const msg = {
+      type: "markAsRead",
+      id: notification.id,
+    }
+    this.notificationSocket.send(JSON.stringify(msg));
   }
 
   @action
@@ -48,12 +63,19 @@ class Store {
 
   @action
   sort() {
+    const getSeverity = (notification) => {
+      return notification.severity || 1;
+    }
     const sortFunc = (a, b) => {
       switch(this.sortBy) {
         case SORT_BY.SEVERITY:
-          return a.severity - b.severity;
+          let diff = getSeverity(a) - getSeverity(b);
+          if (diff === 0) {
+            diff = compareTime(a, b);
+          }
+          return diff;
         default:
-          return compareDesc(parse(a.timestamp), parse(b.timestamp))
+          return compareTime(a, b);
       }
     }
     this.notifications = this.notifications.sort(sortFunc);
