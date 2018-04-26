@@ -12,7 +12,7 @@ class Main extends Component {
     if (this.props.store && this.props.store.notifications) {
       notifications = toJS(this.props.store.notifications);
     }
-
+    console.log(notifications);
     return (
         <Panel>
           {

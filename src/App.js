@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Main from './components/Main';
 import './App.css';
 import { Provider } from 'mobx-react';
-import Store from './stores/store';
+import Store from './stores/store.mock';
 
 class App extends Component {
   render() {

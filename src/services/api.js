@@ -7,7 +7,6 @@ export function getNotifications() {
 }
 
 export function subscribeToNotifications(onMessageRecieved) {
-
   const ws = new Sockette(Constants.WEB_SOCKET_URI, {
     timeout: 5e3,
     maxAttempts: 10,

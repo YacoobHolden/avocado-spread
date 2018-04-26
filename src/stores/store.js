@@ -1,4 +1,4 @@
-import { observable, action } from 'mobx';
+import { observable, action, toJS } from 'mobx';
 import { subscribeToNotifications } from '../services/api';
 
 class Store {
@@ -16,9 +16,12 @@ class Store {
 
   @action
   appendNotifications(notifications) {
-    this.notifications = this.notifications.concat(notifications);
+    if (this.notifications.length) {
+      this.notifications = notifications.concat(toJS(this.notifications));
+    } else {
+      this.notifications = notifications;
+    }
   }
-
 }
 
 export default Store;
