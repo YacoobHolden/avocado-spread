@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Panel from './panel/Panel';
 import Notification from './notification/Notification';
+import OmniBar from './omnibar/OmniBar';
 import { toJS } from 'mobx';
 import { inject, observer } from 'mobx-react';
 
@@ -15,6 +16,7 @@ class Main extends Component {
     console.log(notifications);
     return (
         <Panel>
+          <OmniBar />
           {
             notifications.map((notification => 
               <Notification notification={notification} key={notification.id} />
