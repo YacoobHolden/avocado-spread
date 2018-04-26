@@ -1,5 +1,5 @@
 import { observable, action } from 'mobx';
-import { getNotifications } from '../services/api';
+import { getNotifications, subscribeToNotifications } from '../services/api';
 
 class Store {
   @observable notifications = [];
@@ -14,6 +14,17 @@ class Store {
       this.notifications = data.notifications;
     });
   }
+
+  openNotificationSocket() {
+    subscribeToNotifications((err, data) => this.appendNotification(data))
+  }
+
+  @action
+  appendNotification(notification) {
+    console.log(notification);
+    this.notifications.push(notification);
+  }
+
 }
 
 export default Store;
