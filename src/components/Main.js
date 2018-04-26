@@ -13,12 +13,12 @@ class Main extends Component {
     if (this.props.store && this.props.store.notifications) {
       notifications = toJS(this.props.store.notifications);
     }
-    console.log(notifications);
+    const store = this.props.store;
     return (
         <Panel>
           <OmniBar />
           {
-            notifications.map((notification => 
+            store.displayNotifications && notifications.map((notification => 
               <Notification notification={notification} key={notification.id} />
             ))
           }
