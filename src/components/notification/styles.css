@@ -52,12 +52,13 @@
   flex-wrap: wrap;
   padding: 10px 5px 10px 10px;
   position: relative;
-  width: 100%;
+  overflow: hidden;
 }
 
 .contentSection {
   display: flex;
   flex-grow: 1;
+  overflow: hidden;
 }
 
 .severity {
@@ -66,6 +67,7 @@
   opacity: 0.9;
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
+  flex-shrink: 0;
 }
 
 .lowSeverity {
