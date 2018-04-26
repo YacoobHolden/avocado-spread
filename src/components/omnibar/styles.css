@@ -1,4 +1,7 @@
+@import '../common.css';
+
 .omnibar  {
+  margin-top: var(--top);  
   height: 40px;
   opacity: 0.9;
   border-radius: 3px;

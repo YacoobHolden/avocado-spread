@@ -1,13 +1,12 @@
-
 .notificationContainer {
   overflow: hidden;
-  position: relative;
 }
 
 .notificationWrapper {
   margin-top: 0;
-  max-height: 100vh;
+  height: 100vh;
   position: relative;
+  overflow: hidden;
   transition: margin-top 0.5s;
 }
 
