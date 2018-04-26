@@ -1,5 +1,5 @@
 .card {
-  height: 56px;	
+  min-height: 56px;	
   width:100%;	
   border-radius: 3px;	
   background-color: rgba(255,255,255,0.8);	
@@ -17,6 +17,7 @@
   color: #2E2E2E;
   font-family: roboto;
   line-height: 16px;
+  margin-bottom: 5px;
 }
 
 .notificationTime {
@@ -33,24 +34,25 @@
   font-weight: 500;	
   line-height: 16px;
   margin-right:5px;
+  white-space: nowrap;
 }
 
 .textContent {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  /* white-space: nowrap; */
+  overflow: wrap;
+  /* text-overflow: ellipsis; */
   color: #9B9B9B;	
   font-family: Roboto;	
   font-size: 12px;	
   line-height: 16px;
-  overflow-wrap: break-word;
+  /* overflow-wrap: break-word; */
   width: 100%;
 }
 
 .cardContent {
   display: flex;
   flex-wrap: wrap;
-  padding: 10px 5px 10px 10px;
+  padding: 10px 10px 10px 10px;
   position: relative;
   overflow: hidden;
 }
@@ -62,7 +64,7 @@
 }
 
 .severity {
-  height: 56px;	
+  height: inherit;	
   width: 32px;	
   opacity: 0.9;
   border-top-left-radius: 3px;
