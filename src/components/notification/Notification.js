@@ -4,7 +4,7 @@ class Notification extends Component {
   render() {
     return (
       <div>
-        I'm a Notification
+        I'm a Notification.
       </div>
     );
   }

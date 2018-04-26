@@ -1,33 +1,18 @@
 import React, { Component } from 'react';
-import Panel from './components/panel/Panel';
-import Notification from './components/notification/Notification';
+import Main from './components/Main';
 import './App.css';
-
-import { getNotifications } from './services/api';
+import { Provider } from 'mobx-react';
+import Store from './stores/store';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      notifications: []
-    }
-  }
-
-  componentDidMount() {
-    getNotifications().then(resp => {
-      console.log(resp);
-      this.setState({
-        notifications: resp.notifications,
-      })
-    })
-  }
 
   render() {
+    const store = new Store();
+    store.fetchNotifications();
     return (
-      <Panel>
-        <Notification />
-        <Notification />        
-      </Panel>
+      <Provider store={store}>
+        <Main />
+      </Provider>
     );
   }
 }
