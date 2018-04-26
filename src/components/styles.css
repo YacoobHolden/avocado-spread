@@ -7,10 +7,10 @@
   height: 100vh;
   position: relative;
   overflow: hidden;
-  transition: margin-top 0.5s;
+  transition: margin-top 0.3s;
 }
 
 .hideNotifications {
   margin-top: -110vh  !important;
-  transition: margin-top 0.5s;
+  transition: margin-top 0.3s;
 }
