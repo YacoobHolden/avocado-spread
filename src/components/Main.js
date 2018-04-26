@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import styles from './common.css';
 import Panel from './panel/Panel';
+import MapPanel from './map/MapPanel';
 import Notification from './notification/Notification';
 import OmniBar from './omnibar/OmniBar';
 import { toJS } from 'mobx';
@@ -15,14 +17,17 @@ class Main extends Component {
     }
     const store = this.props.store;
     return (
-        <Panel>
-          <OmniBar />
-          {
-            store.displayNotifications && notifications.map((notification => 
-              <Notification notification={notification} key={notification.id} />
-            ))
-          }
-        </Panel>
+        <div className={styles.main}>
+          <MapPanel />
+          <Panel>
+            <OmniBar />
+            {
+              store.displayNotifications && notifications.map((notification =>
+                <Notification notification={notification} key={notification.id} />
+              ))
+            }
+          </Panel>
+        </div>
     );
   }
 }
