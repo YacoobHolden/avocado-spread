@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Panel from './panel/Panel';
+import MapPanel from './map/MapPanel';
 import Notification from './notification/Notification';
 import OmniBar from './omnibar/OmniBar';
 import { toJS } from 'mobx';
@@ -16,18 +17,21 @@ class Main extends Component {
     }
     const store = this.props.store;
     return (
-        <Panel>
-          <OmniBar />
-            <div className={styles.notificationContainer}>
-              <div className={`${styles.notificationWrapper} ${!store.displayNotifications ? styles.hideNotifications : ''}`}>
-                {
-                  notifications.map((notification => 
-                    <Notification notification={notification} key={notification.id} />
-                  ))
-                }
-              </div>
-            </div>
-        </Panel>
+        <div className={styles.main}>
+            <MapPanel />
+            <Panel>
+                <OmniBar />
+                <div className={styles.notificationContainer}>
+                    <div className={`${styles.notificationWrapper} ${!store.displayNotifications ? styles.hideNotifications : ''}`}>
+                        {
+                            notifications.map((notification =>
+                                    <Notification notification={notification} key={notification.id} />
+                            ))
+                        }
+                    </div>
+                </div>
+            </Panel>
+        </div>
     );
   }
 }

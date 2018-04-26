@@ -14,3 +14,8 @@
   margin-top: -110vh  !important;
   transition: margin-top 0.3s;
 }
+
+.main {
+  height: 100%;
+  width: 100%;
+}
