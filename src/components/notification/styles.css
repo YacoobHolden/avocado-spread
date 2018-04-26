@@ -1,3 +1,30 @@
 .card {
-  padding: 3em;
+  height: 56px;	
+  width:100%;	
+  border-radius: 3px;	
+  background-color: rgba(255,255,255,0.8);	
+  box-shadow: 0 1px 1px 0 #CDCDCD;
+  margin-top: 10px;
+  display: flex;
+}
+
+.severity {
+  height: 56px;	
+  width: 32px;	
+  opacity: 0.9;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  left:0px;
+}
+
+.lowSeverity {
+  background-color: #0F9D58;
+}
+
+.mediumSeverity {
+  background-color: #F35800;
+}
+
+.highSeverity {
+  background-color: #E60000;
 }

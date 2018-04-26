@@ -9,6 +9,7 @@ class Store {
       "content": "CRASH occurred on SH1 (thanks, Gwyneth)",
       "type": "TRAFFIC",
       "timestamp": "2018-04-26T03:59:21+00:00",
+      "severity": 3,
       "properties": {
         "lat": -36.8322175,
         "long": 174.745171
@@ -16,10 +17,11 @@ class Store {
     },
     {
       "id": 1,
-      "title": "Overspeed",
-      "content": "Jane is going too fast!",
-      "type": "OVERSPEED",
+      "title": "Geofence entry",
+      "content": "Jane is going through a geofence!",
+      "type": "GEOFENCE",
       "timestamp": "2018-04-26T03:43:21+00:00",
+      "severity":1,
       "properties": {
         "driverGid": "3fac4c38-367d-484b-9cdc-6496a2bc0742"
       }
