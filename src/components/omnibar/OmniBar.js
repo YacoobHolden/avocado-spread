@@ -30,24 +30,24 @@ class OmniBar extends Component {
     return (
       <div className={styles.omnibar}>
         <div className={styles.left}>
-          <IconButton
-            icon={'sort'}
-            onClick={this.handleSort}
-          />
-          <IconButton 
-            icon={displayNotifications ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}
-            onClick={this.handleToggleDisplayNotifications}
-          />
-
+          <div className={`${styles.item} ${this.props.store.sortBy === SORT_BY.SEVERITY && styles.upsideDown}`}>
+            <IconButton
+              icon={'sort'}
+              onClick={this.handleSort}
+            />
+          </div>
           <Button onClick={this.handleClearAll}>
             Clear All
           </Button>
         </div>
         <div className={styles.right}>
-          <IconButton
-            icon={displayNotifications ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}
-            onClick={this.handleToggleDisplayNotifications}
-          />
+          <div className={`${styles.item} ${displayNotifications && styles.upsideDown}`}>
+            <IconButton
+              icon={'keyboard_arrow_up'}
+              onClick={this.handleToggleDisplayNotifications}
+            />
+          </div>
+
           {/* <IconButton icon={(
             <i className="material-icons">keyboard_arrow_up</i>
           )} /> */}

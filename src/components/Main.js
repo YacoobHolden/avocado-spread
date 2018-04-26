@@ -4,6 +4,7 @@ import Notification from './notification/Notification';
 import OmniBar from './omnibar/OmniBar';
 import { toJS } from 'mobx';
 import { inject, observer } from 'mobx-react';
+import styles from './styles.css';
 
 @inject('store')
 @observer
@@ -17,11 +18,15 @@ class Main extends Component {
     return (
         <Panel>
           <OmniBar />
-          {
-            store.displayNotifications && notifications.map((notification => 
-              <Notification notification={notification} key={notification.id} />
-            ))
-          }
+            <div className={styles.notificationContainer}>
+              <div className={`${styles.notificationWrapper} ${!store.displayNotifications ? styles.hideNotifications : ''}`}>
+                {
+                  notifications.map((notification => 
+                    <Notification notification={notification} key={notification.id} />
+                  ))
+                }
+              </div>
+            </div>
         </Panel>
     );
   }

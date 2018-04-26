@@ -21,4 +21,15 @@
 
 .item {
   padding: 0 4px;
+  transition: all 0.3s;
+  height: 100%;
+}
+
+.item span {
+
+  vertical-align: top !important;
+}
+
+.upsideDown {
+  transform: scaleY(-1);
 }

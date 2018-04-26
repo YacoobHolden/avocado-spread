@@ -1,0 +1,15 @@
+
+.notificationContainer {
+  overflow: hidden;
+}
+
+.notificationWrapper {
+  margin-top: 0;
+  position: relative;
+  transition: margin-top 0.5s;
+}
+
+.hideNotifications {
+  margin-top: -100% !important;
+  transition: margin-top 0.5s;
+}

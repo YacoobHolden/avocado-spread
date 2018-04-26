@@ -10,15 +10,25 @@ class Store {
   @observable notifications = [];
   @observable displayNotifications = true;
   @observable sortBy = SORT_BY.TIME;
+  notificationSocket = null;
 
   constructor(rootStore) {
     this.rootStore = rootStore;
   }
 
   openNotificationSocket() {
-    subscribeToNotifications(
+    this.notificationSocket = subscribeToNotifications(
       e => this.appendNotifications(JSON.parse(e.data))
     )
+  }
+
+  @action
+  markAsRead(notification) {
+    const msg = {
+      type: "markAsRead",
+      id: notification.id,
+    }
+    this.notificationSocket.send(JSON.stringify(msg));
   }
 
   @action
