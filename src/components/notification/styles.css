@@ -8,6 +8,12 @@
   display: flex;
 }
 
+.cardContent {
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
 .severity {
   height: 56px;	
   width: 32px;	
