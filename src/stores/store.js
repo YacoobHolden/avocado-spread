@@ -1,5 +1,5 @@
 import { observable, action } from 'mobx';
-import { getNotifications, subscribeToNotifications } from '../services/api';
+import { subscribeToNotifications } from '../services/api';
 
 class Store {
   @observable notifications = [];

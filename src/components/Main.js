@@ -8,13 +8,18 @@ import { inject, observer } from 'mobx-react';
 @observer
 class Main extends Component {
   render() {
+    let notifications = [];
     if (this.props.store && this.props.store.notifications) {
-      console.log(toJS(this.props.store.notifications));
+      notifications = toJS(this.props.store.notifications);
     }
+
     return (
         <Panel>
-          <Notification />
-          <Notification />
+          {
+            notifications.map((notification => 
+              <Notification notification={notification} key={notification.id} />
+            ))
+          }
         </Panel>
     );
   }

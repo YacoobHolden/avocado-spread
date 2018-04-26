@@ -18,5 +18,5 @@ export function subscribeToNotifications(onMessageRecieved) {
     onclose: e => console.log('Closed!', e),
     onerror: e => console.log('Error:', e)
   });
-
+  return ws;
 }
