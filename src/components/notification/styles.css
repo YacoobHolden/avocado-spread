@@ -38,14 +38,11 @@
 }
 
 .textContent {
-  /* white-space: nowrap; */
   overflow: wrap;
-  /* text-overflow: ellipsis; */
   color: #9B9B9B;	
   font-family: Roboto;	
   font-size: 12px;	
   line-height: 16px;
-  /* overflow-wrap: break-word; */
   width: 100%;
 }
 
